@@ -7553,7 +7553,7 @@ let je = An;
 const lp = N.import("core/module");
 class pp extends lp {
   constructor(t, e) {
-    super(t, e), e && (Array.isArray(e.placeholders) && (this.placeholders = e.placeholders), je.className = e.className || "ql-placeholder-content", je.delimiters = e.delimiters || ["{", "}"]), N.register(je), t.getModule("toolbar").addHandler("placeholder", this.toolbarHandler), t.root.addEventListener("click", this.onClick), t.on("text-change", this.onTextChange);
+    super(t, e), e && (Array.isArray(e.placeholders) && (this.placeholders = e.placeholders), je.className = e.className || "ql-placeholder-content", je.delimiters = e.delimiters || ["{", "}"]), N.register(je), t.getModule("toolbar").addHandler("placeholder", this.toolbarHandler.bind(this)), t.root.addEventListener("click", this.onClick.bind(this)), t.on("text-change", this.onTextChange.bind(this));
   }
   onClick(t) {
     let e = t.target;

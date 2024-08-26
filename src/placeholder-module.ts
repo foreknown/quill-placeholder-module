@@ -26,9 +26,9 @@ export class PlaceholderModule extends Module<ModuleOptions> {
     Quill.register(PlaceholderBlot);
     
     const toolbar = quill.getModule('toolbar') as Toolbar;
-    toolbar.addHandler('placeholder', this.toolbarHandler);
-    quill.root.addEventListener('click', <EventListener>this.onClick);
-    quill.on('text-change', this.onTextChange);
+    toolbar.addHandler('placeholder', this.toolbarHandler.bind(this));
+    quill.root.addEventListener('click', <EventListener>this.onClick.bind(this));
+    quill.on('text-change', this.onTextChange.bind(this));
   }
 
   onClick(ev: Event) {
