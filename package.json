@@ -4,10 +4,10 @@
   "description": "Quill module for inserting placeholders",
 
   "type": "module",
-  "source": "src/ImageResizor.js",
+  "source": "./src/placeholder-module.ts",
   "exports": {
-    "require": "./dist/ImageResizor.umd.cjs",
-    "default": "./dist/ImageResizor.js"
+    "require": "./dist/placeholder-module.umd.cjs",
+    "default": "./dist/placeholder-module.js"
   },
   "main": "./dist/placeholder-module.umd.cjs",
   "module": "./dist/placeholder-module.js",
