@@ -1,7 +1,9 @@
 import {Placeholder} from './placeholder'
 
 export interface ModuleOptions {
-  placeholders: Array<Placeholder>,
-  delimiters?: Array<string>,
-  className?: string
+  placeholders: Placeholder[];
+  delimiters?: string[];
+  className?: string;
+  spaceAfterInsert?: boolean;
+  debug?: string;
 }

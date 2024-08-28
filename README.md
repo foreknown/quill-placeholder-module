@@ -1,5 +1,14 @@
 # quill-placeholder-module
 Quill module for adding placeholders. [Demo](https://codepen.io/jspaine/pen/MozyNp)
+
+This module supports Quill 2.x only and is a more or less usable version.
+
+## Known Bugs
+
+* Placeholder required feature not functional
+* Placeholder select on click broken
+* Karma tests not set up.
+
 ## Install
 ```
 npm install --save quill-placeholder-module
@@ -7,20 +16,15 @@ npm install --save quill-placeholder-module
 
 ## Usage
 ```js
-import getPlaceholderModule from 'quill-placeholder-module'
-// es5
-var getPlaceholderModule = require('quill-placeholder-module').default
-// umd
-var getPlaceholderModule = PlaceholderModule.default
+import {PlaceholderModule} from 'quill-placeholder-module';
 
-Quill.register('modules/placeholder', getPlaceholderModule(Quill, {
-  className: 'ql-placeholder-content'  // default
-}))
+Quill.register('modules/placeholder', PlaceholderModule);
 
 var quill = new Quill('#editor', {
   modules: {
     toolbar: {container: `#toolbar`},
     placeholder: {
+      className: 'ql-placeholder-content',  // default
       delimiters: ['{', '}'],  // default
       placeholders: [
         {id: 'foo', label: 'Foo'},
