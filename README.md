@@ -1,7 +1,13 @@
 # quill-placeholder-module
 Quill module for adding placeholders. [Demo](https://codepen.io/jspaine/pen/MozyNp)
 
-This module supports Quill 2.x only.
+This module supports Quill 2.x only and is a more or less usable version.
+
+## Known Bugs
+
+* Placeholder required feature not functional
+* Placeholder select on click broken
+* Karma tests not set up.
 
 ## Install
 ```

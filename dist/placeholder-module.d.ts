@@ -1,13 +1,16 @@
 import { default as Quill, EmitterSource } from 'quill';
 import { Delta } from 'quill/core';
+import { PlaceholderEvent } from './placeholder-blot';
 import { ModuleOptions } from './module-options';
 
 declare const Module: typeof import('quill').Module;
-export declare class PlaceholderModule extends Module<ModuleOptions> {
+export * from './placeholder-blot';
+export default class PlaceholderModule extends Module<ModuleOptions> {
     private placeholders;
+    private spaceAfterInsert;
     constructor(quill: Quill, options?: Partial<ModuleOptions>);
-    onClick(ev: Event): void;
+    onClick(ev: PlaceholderEvent): void;
     toolbarHandler(identifier: string): void;
-    onTextChange(delta: Delta, oldDelta: Delta, source: EmitterSource): void;
+    setSelection(index: number, length?: number, timeout?: number): void;
+    onTextChange(newDelta: Delta, oldDelta: Delta, source: EmitterSource): void;
 }
-export {};
